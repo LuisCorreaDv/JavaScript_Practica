@@ -76,3 +76,9 @@ prevBtn.addEventListener("click", () => {
     showPerson(currentItem);
 });
 
+//Generar review con numero aleatorio
+randomBtn.addEventListener('click', () => {
+    currentItem = Math.floor(Math.random() * reviews.length);
+    showPerson(currentItem);
+});
+
