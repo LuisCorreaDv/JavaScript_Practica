@@ -57,9 +57,22 @@ function showPerson(person) {
     info.textContent = item.text;
 }
 
-//Cambiar de persona 
+//Cambiar de persona (Next)
 
 nextBtn.addEventListener("click", () => {
     currentItem++;
+    if(currentItem > reviews.length - 1){
+        currentItem = 0;
+    }
     showPerson(currentItem);
 });
+
+//Regresar a persona anterior
+prevBtn.addEventListener("click", () => {
+    currentItem--;
+    if(currentItem < 0){
+        currentItem = reviews.length - 1;
+    }
+    showPerson(currentItem);
+});
+
