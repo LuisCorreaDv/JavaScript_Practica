@@ -44,9 +44,22 @@ let currentItem = 0;
 
 // Cargar item inicial
 window.addEventListener("DOMContentLoaded", () => {
-    const item = reviews[currentItem];
+    showPerson(currentItem);
+});
+
+//Obtener los datos segun el numero del item
+
+function showPerson(person) {
+    const item = reviews[person];
     img.src = item.img;
     author.textContent = item.name;
     job.textContent = item.job;
     info.textContent = item.text;
+}
+
+//Cambiar de persona 
+
+nextBtn.addEventListener("click", () => {
+    currentItem++;
+    showPerson(currentItem);
 });
